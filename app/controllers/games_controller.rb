@@ -9,7 +9,7 @@ class GamesController < ApplicationController
     if @game.save
       redirect_to @game
     else
-      flash[:danger] = 'player names not valid, please try again'
+      flash.now[:danger] = 'player names not valid, please try again'
       render 'new'
     end
   end
