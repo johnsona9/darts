@@ -14,7 +14,6 @@ gem 'jbuilder',     '2.4.1'
 group :development, :test do
   gem 'sqlite3', '1.3.11'
   gem 'byebug',  '9.0.0', platform: :mri
-  gem 'better_errors'
 end
 
 group :development do
@@ -22,6 +21,8 @@ group :development do
   gem 'listen',                '3.0.8'
   gem 'spring',                '1.7.1'
   gem 'spring-watcher-listen', '2.0.0'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do
