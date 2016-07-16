@@ -1,2 +1,106 @@
-<% provide(:title, 'Game') %>
-<h1>Game</h1>
+<% provide(:title, "#{@game.player_one} vs. #{@game.player_two}") %>
+<h1><%= "#{@game.player_one} vs. #{@game.player_two}" %></h1>
+
+<div class="container">
+    <!-- names -->
+    <div class="row">
+      <div class="col-sm-2">
+        <h1><%= "#{@game.player_one_score}" %></h1>
+      </div>
+      <div class="col-sm-3">
+        <h1><%= "#{@game.player_one}" %></h1>
+      </div>
+      <div class="col-sm-2">
+      </div>
+      <div class="col-sm-3">
+        <h1><%= "#{@game.player_two}" %></h1>
+      </div>
+      <div class="col-sm-2">
+        <h1><%= "#{@game.player_two_score}" %></h1>
+      </div>
+  </div>
+  <!-- 15 -->
+  <div class="row">
+    <div class="col-sm-4">
+      <h1><%= "#{@game.player_one_15}" %></h1>
+    </div>
+    <div class="col-sm-4">
+        <h1>15</h1>
+    </div>
+    <div class="col-sm-4">
+      <h1><%= "#{@game.player_two_15}" %></h1>
+    </div>
+  </div>
+  <!-- 16 -->
+  <div class="row">
+    <div class="col-sm-4">
+      <h1><%= "#{@game.player_one_16}" %></h1>
+    </div>
+    <div class="col-sm-4">
+        <h1>16</h1>
+    </div>
+    <div class="col-sm-4">
+      <h1><%= "#{@game.player_two_16}" %></h1>
+    </div>
+  </div>
+  <!-- 17 -->
+  <div class="row">
+    <div class="col-sm-4">
+      <h1><%= "#{@game.player_one_17}" %></h1>
+    </div>
+    <div class="col-sm-4">
+        <h1>17</h1>
+    </div>
+    <div class="col-sm-4">
+      <h1><%= "#{@game.player_two_17}" %></h1>
+    </div>
+  </div>
+  <!-- 18 -->
+  <div class="row">
+    <div class="col-sm-4">
+      <h1><%= "#{@game.player_one_18}" %></h1>
+    </div>
+    <div class="col-sm-4">
+        <h1>18</h1>
+    </div>
+    <div class="col-sm-4">
+      <h1><%= "#{@game.player_two_18}" %></h1>
+    </div>
+  </div>
+  <!-- 19 -->
+  <div class="row">
+    <div class="col-sm-4">
+      <h1><%= "#{@game.player_one_19}" %></h1>
+    </div>
+    <div class="col-sm-4">
+        <h1>19</h1>
+    </div>
+    <div class="col-sm-4">
+      <h1><%= "#{@game.player_two_19}" %></h1>
+    </div>
+  </div>
+  <!-- 20 -->
+  <div class="row">
+    <div class="col-sm-4">
+      <h1><%= "#{@game.player_one_20}" %></h1>
+    </div>
+    <div class="col-sm-4">
+        <h1>20</h1>
+    </div>
+    <div class="col-sm-4">
+      <h1><%= "#{@game.player_two_20}" %></h1>
+    </div>
+  </div>
+  <!-- BE -->
+  <div class="row">
+    <div class="col-sm-4">
+      <h1><%= "#{@game.player_one_be}" %></h1>
+    </div>
+    <div class="col-sm-4">
+        <h1>BE</h1>
+    </div>
+    <div class="col-sm-4">
+      <h1><%= "#{@game.player_two_be}" %></h1>
+    </div>
+  </div>
+</div>
