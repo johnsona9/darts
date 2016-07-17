@@ -3,8 +3,18 @@
   <div class="col-sm-4">
     <h1><%= button_to("#{@game.player_one_be}", games_player_one_be_path(id: @game.id), method: :post, class: 'button') %></h1>
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-1">
+    <%= image_tag('one.png', class: 'image') if @game.player_one_be == 1 %>
+    <%= image_tag('two.png', class: 'image') if @game.player_one_be == 2 %>
+    <%= image_tag('three.png', class: 'image') if @game.player_one_be > 2 %>
+  </div>
+  <div class="col-sm-2">
       <h1>BE</h1>
+  </div>
+  <div class="col-sm-1">
+    <%= image_tag('one.png', class: 'image') if @game.player_two_be == 1 %>
+    <%= image_tag('two.png', class: 'image') if @game.player_two_be == 2 %>
+    <%= image_tag('three.png', class: 'image') if @game.player_two_be > 2 %>
   </div>
   <div class="col-sm-4">
     <h1><%= button_to("#{@game.player_two_be}", games_player_two_be_path(id: @game.id), method: :post, class: 'button') %></h1>
