@@ -1,0 +1,12 @@
+<!-- 18 -->
+<div class="row">
+  <div class="col-sm-4">
+    <button type="button" name="button"><%= link_to("#{@game.player_one_18}", games_player_one_18_path(id: @game.id), method: :post) %></button>
+  </div>
+  <div class="col-sm-4">
+      <h1>18</h1>
+  </div>
+  <div class="col-sm-4">
+    <button type="button" name="button"><%= link_to("#{@game.player_two_18}", games_player_two_18_path(id: @game.id), method: :post) %></button>
+  </div>
+</div>
