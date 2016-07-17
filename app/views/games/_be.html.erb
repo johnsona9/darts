@@ -1,12 +1,12 @@
-<!-- BE -->
+<!-- be -->
 <div class="row">
   <div class="col-sm-4">
-    <h1><%= "#{@game.player_one_be}" %></h1>
+    <button type="button" name="button"><%= link_to("#{@game.player_one_be}", games_player_one_be_path(id: @game.id), method: :post) %></button>
   </div>
   <div class="col-sm-4">
       <h1>BE</h1>
   </div>
   <div class="col-sm-4">
-    <h1><%= "#{@game.player_two_be}" %></h1>
+    <button type="button" name="button"><%= link_to("#{@game.player_two_be}", games_player_two_be_path(id: @game.id), method: :post) %></button>
   </div>
 </div>
