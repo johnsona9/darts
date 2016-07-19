@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   resources :games
   resources :users
+
+  post 'games/update_player'
   post 'games/player_one_15'
   post 'games/player_two_15'
   post 'games/player_one_16'

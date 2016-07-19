@@ -14,11 +14,7 @@
         <h1><%= "#{@game.player_two_score}" %></h1>
       </div>
   </div>
-  <%= render '15' %>
-  <%= render '16' %>
-  <%= render '17' %>
-  <%= render '18' %>
-  <%= render '19' %>
-  <%= render '20' %>
-  <%= render 'be' %>
+  <%= ['15', '16', '17', '18', '19', '20', 'be'].each do |num| %>
+    <%= render partial: 'scorer', locals: { score: num } %>
+  <% end %>
 </div>
