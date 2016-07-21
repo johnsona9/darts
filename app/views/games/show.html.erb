@@ -5,13 +5,13 @@
     <!-- names -->
     <div class="row">
       <div class="col-sm-4">
-        <h1><%= "#{@game.player_one_score}" %></h1>
+        <h1><%= "#{@game[:player_one_score] || 0}" %></h1>
       </div>
       <div class="col-sm-4">
         <h1>Score</h1>
       </div>
       <div class="col-sm-4">
-        <h1><%= "#{@game.player_two_score}" %></h1>
+        <h1><%= "#{@game[:player_two_score] || 0}" %></h1>
       </div>
   </div>
   <%= ['15', '16', '17', '18', '19', '20', 'be'].each do |num| %>
