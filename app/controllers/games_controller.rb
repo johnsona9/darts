@@ -17,6 +17,8 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @player_one_name = User.find(@game.player_one).name
+    @player_two_name = User.find(@game.player_two).name
   end
 
   def update_player

@@ -5,11 +5,11 @@
     <div class="row">
       <div class="col-sm-6">
         <%= f.label :player_one %>
-        <%= f.select :player_one, User.all.map(&:name) %>
+        <%= f.select :player_one, User.all.collect {|user| [user.name, user.id]} %>
       </div>
       <div class="col-sm-6">
         <%= f.label :player_two %>
-        <%= f.select :player_two, User.all.map(&:name) %>
+        <%= f.select :player_two, User.all.collect {|user| [user.name, user.id]} %>
       </div>
     </div>
     <%= f.submit 'Create new game', class: 'btn btn-primary' %>
