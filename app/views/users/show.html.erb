@@ -9,7 +9,7 @@
     <div class="col-sm-8">
       <% games_played.each do |game| %>
         <p>
-          <%= "#{game.player_one_score} - #{game.player_two_score}" %>
+          <%= "#{game[:player_one_score] || 0} - #{game[:player_two_score] || 0} " + winner(game)%>
         </p>
       <% end %>
     </div>
