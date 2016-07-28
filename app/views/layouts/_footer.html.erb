@@ -1,0 +1,23 @@
+<footerclass="navbar navbar-fixed-bottom navbar-inverse">
+  <div class="container">
+    <%= link_to "Darts", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-center">
+        <li><%= link_to 'P1 Sign In', log_in_one_path %></li>
+        <li><%= link_to "New User", signup_path %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Account <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Settings", '#' %></li>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "Log out", '#' %>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</footer>

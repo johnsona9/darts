@@ -25,10 +25,12 @@ module SessionsHelper
   end
 
   def log_out_one
-    session.delete[:user_id_one]
+    session.delete(:user_id_one)
+    @current_user_one = nil
   end
 
   def log_out_two
-    session.delete[:user_id_two]
+    session.delete(:user_id_two)
+    @current_user_two = nil
   end
 end
