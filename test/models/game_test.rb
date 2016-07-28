@@ -6,14 +6,14 @@ class GameTest < ActiveSupport::TestCase
   end
 
   test 'players cannot be same' do
-    @game.player_one = 'adam'
-    @game.player_two = 'adam'
+    @game.player_one = 1
+    @game.player_two = 1
     assert_not @game.save
   end
 
   test 'game saves with two names' do
-    @game.player_one = 'adam'
-    @game.player_two = 'alex'
+    @game.player_one = 2
+    @game.player_two = 1
     assert @game.save
   end
 end

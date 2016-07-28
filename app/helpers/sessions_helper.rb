@@ -1,0 +1,34 @@
+module SessionsHelper
+
+  def log_in_one(user)
+    session[:user_id_one] = user.id
+  end
+
+  def log_in_two(user)
+    session[:user_id_two] = user.id
+  end
+
+  def current_user_one
+    @current_user_one ||= User.find_by(id: session[:user_id_one])
+  end
+
+  def current_user_two
+    @current_user_two ||= User.find_by(id: session[:user_id_two])
+  end
+
+  def logged_in_one?
+    !current_user_one.nil?
+  end
+
+  def logged_in_two?
+    !current_user_two.nil?
+  end
+
+  def log_out_one
+    session.delete[:user_id_one]
+  end
+
+  def log_out_two
+    session.delete[:user_id_two]
+  end
+end

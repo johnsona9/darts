@@ -7,6 +7,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      if !logged_in_one?
+        log_in_one @user
+      elsif !logged_in_two?
+        log_in_two @user
+      end
       redirect_to @user
     else
       render 'new'
@@ -19,6 +24,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:name, :email)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 end
