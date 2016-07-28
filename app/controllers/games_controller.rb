@@ -3,15 +3,18 @@ class GamesController < ApplicationController
 
   def new
     @game = Game.new
-  end
-
-  def create
-    @game = Game.new(game_params)
-    if @game.save
-      redirect_to @game
+    if logged_in_one? && logged_in_two?
+      @game['player_one'] = @current_user_one.id
+      @game['player_two'] = @current_user_two.id
+      if @game.save
+        redirect_to @game
+      else
+        flash.now[:danger] = 'player names not valid, please try again'
+        redirect_to root_path
+      end
     else
-      flash.now[:danger] = 'player names not valid, please try again'
-      render 'new'
+      redirect_to root_path
+      flash.now[:danger] = 'need two players to be signed in to start a game'
     end
   end
 
@@ -40,6 +43,6 @@ class GamesController < ApplicationController
   end
 
     def game_params
-      params.require(:game).permit(:player_one, :player_two)
+      params.require(:game)
     end
 end
