@@ -9,12 +9,12 @@ class GamesController < ApplicationController
       if @game.save
         redirect_to @game
       else
-        flash.now[:danger] = 'player names not valid, please try again'
+        flash[:danger] = 'There was an error, please try again.'
         redirect_to root_path
       end
     else
+      flash[:danger] = 'Two players to be signed in to start a game.'
       redirect_to root_path
-      flash.now[:danger] = 'need two players to be signed in to start a game'
     end
   end
 
