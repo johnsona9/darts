@@ -1,8 +1,8 @@
 class CreateGames < ActiveRecord::Migration[5.0]
   def change
     create_table :games do |t|
-      t.string :player_one
-      t.string :player_two
+      t.integer :player_one
+      t.integer :player_two
       t.integer :player_one_15
       t.integer :player_two_15
       t.integer :player_one_16
