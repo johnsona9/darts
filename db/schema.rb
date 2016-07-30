@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160730171954) do
+ActiveRecord::Schema.define(version: 20160730214154) do
 
   create_table "games", force: :cascade do |t|
     t.integer  "player_one"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20160730171954) do
     t.string   "activation_digest"
     t.boolean  "activated",         default: false
     t.datetime "activated_at"
+    t.string   "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
 end
