@@ -7,14 +7,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      if !logged_in_one?
-        log_in_one @user
-      elsif !logged_in_two?
-        log_in_two @user
-      end
+      # if !logged_in_one?
+      #   log_in_one @user
+      # elsif !logged_in_two?
+      #   log_in_two @user
+      # end
       UserMailer.account_activation(@user).deliver_now
       flash[:info] = 'Please check your email to activate your account.'
-      redirect_to @user
+      redirect_to root_url
     else
       render 'new'
     end
