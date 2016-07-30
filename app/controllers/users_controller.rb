@@ -12,6 +12,8 @@ class UsersController < ApplicationController
       elsif !logged_in_two?
         log_in_two @user
       end
+      UserMailer.account_activation(@user).deliver_now
+      flash[:info] = 'Please check your email to activate your account.'
       redirect_to @user
     else
       render 'new'

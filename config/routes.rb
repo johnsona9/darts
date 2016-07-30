@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   resources :games
   resources :users
+  resources :account_activations, only: [:edit]
 
   get '/log_in_one', to: 'sessions#new_one'
   post 'log_in_one', to: 'sessions#create_one'
