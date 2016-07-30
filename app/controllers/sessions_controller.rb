@@ -29,12 +29,14 @@ class SessionsController < ApplicationController
       user = User.find_by(email: params[:session][:email].downcase)
       if user && user.authenticate(params[:session][:password])
         if user.activated?
-          if user_num == 1
+          if user_num == 1 && current_user_two != user
             log_in_one user
-          elsif user_num == 2
+          elsif user_num == 2 && current_user_one != user
             log_in_two user
+          else
+            flash[:danger] = 'You can not sign in more than once'
+            redirect_to root_url
           end
-          redirect_to user
         else
           flash[:warning] = 'Your account is not activated, please check your email and try again.'
           redirect_to root_url

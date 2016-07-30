@@ -8,11 +8,9 @@ class AccountActivationsController < ApplicationController
       if !logged_in_one?
         log_in_one user
         flash[:success] = "Account activated!"
-        redirect_to user
       elsif !logged_in_two?
         log_in_two user
         flash[:success] = "Account activated!"
-        redirect_to user
       else
         flash[:danger] = 'Two users are already signed in.'
         redirect_to root_url

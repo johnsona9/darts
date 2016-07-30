@@ -3,7 +3,7 @@ class GamesController < ApplicationController
 
   def new
     @game = Game.new
-    if logged_in_one? && logged_in_two?
+    if authenticated_one? && authenticated_two?
       @game['player_one'] = @current_user_one.id
       @game['player_two'] = @current_user_two.id
       if @game.save
