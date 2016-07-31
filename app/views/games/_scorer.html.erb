@@ -1,26 +1,22 @@
 <!-- scorer partial -->
 <div class="row">
   <div class="col-sm-4">
-    <h1><%= button_to("#{@game['player_one_' + score] || 0}", games_update_player_path(id: @game.id, player: 'one', score: score), method: :post, class: 'button') %></h1>
+    <h1><%= button_to("#{@game['player_one_' + score]}", games_update_player_path(id: @game.id, player: 'one', score: score), method: :post, class: 'button') %></h1>
   </div>
   <div class="col-sm-1">
-    <% if !@game['player_one_' + score].nil? %>
-      <%= image_tag('one.png', class: 'image') if @game['player_one_' + score] == 1 %>
-      <%= image_tag('two.png', class: 'image') if @game['player_one_' + score] == 2 %>
-      <%= image_tag('three.png', class: 'image') if @game['player_one_' + score] > 2 %>
-    <% end %>
+    <%= image_tag('one.png', class: 'image') if @game['player_one_' + score] == 1 %>
+    <%= image_tag('two.png', class: 'image') if @game['player_one_' + score] == 2 %>
+    <%= image_tag('three.png', class: 'image') if @game['player_one_' + score] > 2 %>
   </div>
   <div class="col-sm-2">
       <h1><%= score %></h1>
   </div>
   <div class="col-sm-1">
-    <% if !@game['player_two_' + score].nil? %>
-      <%= image_tag('one.png', class: 'image') if @game['player_two_' + score] == 1 %>
-      <%= image_tag('two.png', class: 'image') if @game['player_two_' + score] == 2 %>
-      <%= image_tag('three.png', class: 'image') if @game['player_two_' + score] > 2 %>
-    <% end %>
+    <%= image_tag('one.png', class: 'image') if @game['player_two_' + score] == 1 %>
+    <%= image_tag('two.png', class: 'image') if @game['player_two_' + score] == 2 %>
+    <%= image_tag('three.png', class: 'image') if @game['player_two_' + score] > 2 %>
   </div>
   <div class="col-sm-4">
-    <h1><%= button_to("#{@game['player_two_' + score]  || 0}", games_update_player_path(id: @game.id, player: 'two', score: score), method: :post, class: 'button') %></h1>
+    <h1><%= button_to("#{@game['player_two_' + score]}", games_update_player_path(id: @game.id, player: 'two', score: score), method: :post, class: 'button') %></h1>
   </div>
 </div>
