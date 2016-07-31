@@ -10,29 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160730214154) do
+ActiveRecord::Schema.define(version: 20160731174405) do
 
   create_table "games", force: :cascade do |t|
     t.integer  "player_one"
     t.integer  "player_two"
-    t.integer  "player_one_15"
-    t.integer  "player_two_15"
-    t.integer  "player_one_16"
-    t.integer  "player_two_16"
-    t.integer  "player_one_17"
-    t.integer  "player_two_17"
-    t.integer  "player_one_18"
-    t.integer  "player_two_18"
-    t.integer  "player_one_19"
-    t.integer  "player_two_19"
-    t.integer  "player_one_20"
-    t.integer  "player_two_20"
-    t.integer  "player_one_be"
-    t.integer  "player_two_be"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "player_one_score"
-    t.integer  "player_two_score"
+    t.integer  "player_one_15",    default: 0
+    t.integer  "player_two_15",    default: 0
+    t.integer  "player_one_16",    default: 0
+    t.integer  "player_two_16",    default: 0
+    t.integer  "player_one_17",    default: 0
+    t.integer  "player_two_17",    default: 0
+    t.integer  "player_one_18",    default: 0
+    t.integer  "player_two_18",    default: 0
+    t.integer  "player_one_19",    default: 0
+    t.integer  "player_two_19",    default: 0
+    t.integer  "player_one_20",    default: 0
+    t.integer  "player_two_20",    default: 0
+    t.integer  "player_one_be",    default: 0
+    t.integer  "player_two_be",    default: 0
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "player_one_score", default: 0
+    t.integer  "player_two_score", default: 0
   end
 
   create_table "users", force: :cascade do |t|
