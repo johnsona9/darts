@@ -37,7 +37,7 @@ class GamesController < ApplicationController
       initial_score = @game[('player_' + params[:player] + '_' + params[:score])]
       @game[('player_' + params[:player] + '_' + params[:score])] = initial_score + 1
     end
-    redirect_to @game if @game.save
+    @game.save
   end
 
     def game_params

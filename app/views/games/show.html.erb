@@ -4,13 +4,15 @@
     <!-- names -->
     <div class="row">
       <div class="col-sm-4">
-        <h1><%= "#{@game[:player_one_score]}" %></h1>
+        <%= content_tag :h1, id: 'player_one_score' do %>
+          <%= "#{@game[:player_one_score]}" %>
+        <% end %>
       </div>
       <div class="col-sm-4">
         <h1>Score</h1>
       </div>
       <div class="col-sm-4">
-        <h1><%= "#{@game[:player_two_score]}" %></h1>
+        <h1 id='player_two_score'><%= "#{@game[:player_two_score]}" %></h1>
       </div>
   </div>
   <% ['20', '19', '18', '17', '16', '15', 'be'].each do |num| %>

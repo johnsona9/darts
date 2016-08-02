@@ -1,0 +1,298 @@
+// Place all the behaviors and hooks related to the matching controller here.
+// All this logic will automatically be available in application.js.
+// You can use CoffeeScript in this file: http://coffeescript.org
+$(document).ready(function() {
+    $('#player_one_15').on('click', function() {
+        var val = (parseInt($('#player_one_15').val(), 10) + 1).toString();
+        $('#player_one_15').attr('value', val);
+        var lav = parseInt($('#player_two_15').val(), 10);
+        val = parseInt(val)
+        if (val > 3 && lav < 3) {
+            console.log('penis');
+            var score = (parseInt($('#player_one_score').text(), 10) + 15).toString();
+            $('#player_one_score').text(function(i, oldtext) {
+                return score;
+            });
+        }
+        if (val == 1) {
+            $('#player_one_15_img').attr('src', "<%= image_path 'one.png', class: 'image' %>");
+        } else if (val == 2) {
+            $('#player_one_15_img').attr('src', "<%= image_path 'two.png', class: 'image' %>");
+        } else if (val == 3) {
+            $('#player_one_15_img').attr('src', "<%= image_path 'three.png', class: 'image' %>");
+        }
+    });
+
+    $('#player_one_16').on('click', function() {
+        var val = (parseInt($('#player_one_16').val(), 10) + 1).toString();
+        $('#player_one_16').attr('value', val);
+        var lav = parseInt($('#player_two_16').val(), 10);
+        val = parseInt(val)
+        if (val > 3 && lav < 3) {
+            console.log('penis');
+            var score = (parseInt($('#player_one_score').text(), 10) + 16).toString();
+            $('#player_one_score').text(function(i, oldtext) {
+                return score;
+            });
+        }
+        if (val == 1) {
+            $('#player_one_16_img').attr('src', "<%= image_path 'one.png', class: 'image' %>");
+        } else if (val == 2) {
+            $('#player_one_16_img').attr('src', "<%= image_path 'two.png', class: 'image' %>");
+        } else if (val == 3) {
+            $('#player_one_16_img').attr('src', "<%= image_path 'three.png', class: 'image' %>");
+        }
+    });
+
+    $('#player_one_17').on('click', function() {
+        var val = (parseInt($('#player_one_17').val(), 10) + 1).toString();
+        $('#player_one_17').attr('value', val);
+        var lav = parseInt($('#player_two_17').val(), 10);
+        val = parseInt(val)
+        if (val > 3 && lav < 3) {
+            console.log('penis');
+            var score = (parseInt($('#player_one_score').text(), 10) + 17).toString();
+            $('#player_one_score').text(function(i, oldtext) {
+                return score;
+            });
+        }
+        if (val == 1) {
+            $('#player_one_17_img').attr('src', "<%= image_path 'one.png', class: 'image' %>");
+        } else if (val == 2) {
+            $('#player_one_17_img').attr('src', "<%= image_path 'two.png', class: 'image' %>");
+        } else if (val == 3) {
+            $('#player_one_17_img').attr('src', "<%= image_path 'three.png', class: 'image' %>");
+        }
+    });
+
+    $('#player_one_18').on('click', function() {
+        var val = (parseInt($('#player_one_18').val(), 10) + 1).toString();
+        $('#player_one_18').attr('value', val);
+        var lav = parseInt($('#player_two_18').val(), 10);
+        val = parseInt(val)
+        if (val > 3 && lav < 3) {
+            console.log('penis');
+            var score = (parseInt($('#player_one_score').text(), 10) + 18).toString();
+            $('#player_one_score').text(function(i, oldtext) {
+                return score;
+            });
+        }
+        if (val == 1) {
+            $('#player_one_18_img').attr('src', "<%= image_path 'one.png', class: 'image' %>");
+        } else if (val == 2) {
+            $('#player_one_18_img').attr('src', "<%= image_path 'two.png', class: 'image' %>");
+        } else if (val == 3) {
+            $('#player_one_18_img').attr('src', "<%= image_path 'three.png', class: 'image' %>");
+        }
+    });
+
+    $('#player_one_19').on('click', function() {
+        var val = (parseInt($('#player_one_19').val(), 10) + 1).toString();
+        $('#player_one_19').attr('value', val);
+        var lav = parseInt($('#player_two_19').val(), 10);
+        val = parseInt(val)
+        if (val > 3 && lav < 3) {
+            console.log('penis');
+            var score = (parseInt($('#player_one_score').text(), 10) + 19).toString();
+            $('#player_one_score').text(function(i, oldtext) {
+                return score;
+            });
+        }
+        if (val == 1) {
+            $('#player_one_19_img').attr('src', "<%= image_path 'one.png', class: 'image' %>");
+        } else if (val == 2) {
+            $('#player_one_19_img').attr('src', "<%= image_path 'two.png', class: 'image' %>");
+        } else if (val == 3) {
+            $('#player_one_19_img').attr('src', "<%= image_path 'three.png', class: 'image' %>");
+        }
+    });
+
+    $('#player_one_20').on('click', function() {
+        var val = (parseInt($('#player_one_20').val(), 10) + 1).toString();
+        $('#player_one_20').attr('value', val);
+        var lav = parseInt($('#player_two_20').val(), 10);
+        val = parseInt(val)
+        if (val > 3 && lav < 3) {
+            console.log('penis');
+            var score = (parseInt($('#player_one_score').text(), 10) + 20).toString();
+            $('#player_one_score').text(function(i, oldtext) {
+                return score;
+            });
+        }
+        if (val == 1) {
+            $('#player_one_20_img').attr('src', "<%= image_path 'one.png', class: 'image' %>");
+        } else if (val == 2) {
+            $('#player_one_20_img').attr('src', "<%= image_path 'two.png', class: 'image' %>");
+        } else if (val == 3) {
+            $('#player_one_20_img').attr('src', "<%= image_path 'three.png', class: 'image' %>");
+        }
+    });
+
+    $('#player_one_be').on('click', function() {
+        var val = (parseInt($('#player_one_be').val(), 10) + 1).toString();
+        $('#player_one_be').attr('value', val);
+        var lav = parseInt($('#player_two_be').val(), 10);
+        val = parseInt(val)
+        if (val > 3 && lav < 3) {
+            console.log('penis');
+            var score = (parseInt($('#player_one_score').text(), 10) + 25).toString();
+            $('#player_one_score').text(function(i, oldtext) {
+                return score;
+            });
+        }
+        if (val == 1) {
+            $('#player_one_be_img').attr('src', "<%= image_path 'one.png', class: 'image' %>");
+        } else if (val == 2) {
+            $('#player_one_be_img').attr('src', "<%= image_path 'two.png', class: 'image' %>");
+        } else if (val == 3) {
+            $('#player_one_be_img').attr('src', "<%= image_path 'three.png', class: 'image' %>");
+        }
+    });
+
+    $('#player_two_15').on('click', function() {
+        var val = (parseInt($('#player_two_15').val(), 10) + 1).toString();
+        $('#player_two_15').attr('value', val);
+        var lav = parseInt($('#player_one_15').val(), 10);
+        val = parseInt(val)
+        if (val > 3 && lav < 3) {
+            console.log('penis');
+            var score = (parseInt($('#player_two_score').text(), 10) + 15).toString();
+            $('#player_two_score').text(function(i, oldtext) {
+                return score;
+            });
+        }
+        if (val == 1) {
+            $('#player_two_15_img').attr('src', "<%= image_path 'one.png', class: 'image' %>");
+        } else if (val == 2) {
+            $('#player_two_15_img').attr('src', "<%= image_path 'two.png', class: 'image' %>");
+        } else if (val == 3) {
+            $('#player_two_15_img').attr('src', "<%= image_path 'three.png', class: 'image' %>");
+        }
+    });
+
+    $('#player_two_16').on('click', function() {
+        var val = (parseInt($('#player_two_16').val(), 10) + 1).toString();
+        $('#player_two_16').attr('value', val);
+        var lav = parseInt($('#player_one_16').val(), 10);
+        val = parseInt(val)
+        if (val > 3 && lav < 3) {
+            console.log('penis');
+            var score = (parseInt($('#player_two_score').text(), 10) + 16).toString();
+            $('#player_two_score').text(function(i, oldtext) {
+                return score;
+            });
+        }
+        if (val == 1) {
+            $('#player_two_16_img').attr('src', "<%= image_path 'one.png', class: 'image' %>");
+        } else if (val == 2) {
+            $('#player_two_16_img').attr('src', "<%= image_path 'two.png', class: 'image' %>");
+        } else if (val == 3) {
+            $('#player_two_16_img').attr('src', "<%= image_path 'three.png', class: 'image' %>");
+        }
+    });
+
+    $('#player_two_17').on('click', function() {
+        var val = (parseInt($('#player_two_17').val(), 10) + 1).toString();
+        $('#player_two_17').attr('value', val);
+        var lav = parseInt($('#player_one_17').val(), 10);
+        val = parseInt(val)
+        if (val > 3 && lav < 3) {
+            console.log('penis');
+            var score = (parseInt($('#player_two_score').text(), 10) + 17).toString();
+            $('#player_two_score').text(function(i, oldtext) {
+                return score;
+            });
+        }
+        if (val == 1) {
+            $('#player_two_17_img').attr('src', "<%= image_path 'one.png', class: 'image' %>");
+        } else if (val == 2) {
+            $('#player_two_17_img').attr('src', "<%= image_path 'two.png', class: 'image' %>");
+        } else if (val == 3) {
+            $('#player_two_17_img').attr('src', "<%= image_path 'three.png', class: 'image' %>");
+        }
+    });
+
+    $('#player_two_18').on('click', function() {
+        var val = (parseInt($('#player_two_18').val(), 10) + 1).toString();
+        $('#player_two_18').attr('value', val);
+        var lav = parseInt($('#player_one_18').val(), 10);
+        val = parseInt(val)
+        if (val > 3 && lav < 3) {
+            console.log('penis');
+            var score = (parseInt($('#player_two_score').text(), 10) + 18).toString();
+            $('#player_two_score').text(function(i, oldtext) {
+                return score;
+            });
+        }
+        if (val == 1) {
+            $('#player_two_18_img').attr('src', "<%= image_path 'one.png', class: 'image' %>");
+        } else if (val == 2) {
+            $('#player_two_18_img').attr('src', "<%= image_path 'two.png', class: 'image' %>");
+        } else if (val == 3) {
+            $('#player_two_18_img').attr('src', "<%= image_path 'three.png', class: 'image' %>");
+        }
+    });
+
+    $('#player_two_19').on('click', function() {
+        var val = (parseInt($('#player_two_19').val(), 10) + 1).toString();
+        $('#player_two_19').attr('value', val);
+        var lav = parseInt($('#player_one_19').val(), 10);
+        val = parseInt(val)
+        if (val > 3 && lav < 3) {
+            console.log('penis');
+            var score = (parseInt($('#player_two_score').text(), 10) + 19).toString();
+            $('#player_two_score').text(function(i, oldtext) {
+                return score;
+            });
+        }
+        if (val == 1) {
+            $('#player_two_19_img').attr('src', "<%= image_path 'one.png', class: 'image' %>");
+        } else if (val == 2) {
+            $('#player_two_19_img').attr('src', "<%= image_path 'two.png', class: 'image' %>");
+        } else if (val == 3) {
+            $('#player_two_19_img').attr('src', "<%= image_path 'three.png', class: 'image' %>");
+        }
+    });
+
+    $('#player_two_20').on('click', function() {
+        var val = (parseInt($('#player_two_20').val(), 10) + 1).toString();
+        $('#player_two_20').attr('value', val);
+        var lav = parseInt($('#player_one_20').val(), 10);
+        val = parseInt(val)
+        if (val > 3 && lav < 3) {
+            console.log('penis');
+            var score = (parseInt($('#player_two_score').text(), 10) + 20).toString();
+            $('#player_two_score').text(function(i, oldtext) {
+                return score;
+            });
+        }
+        if (val == 1) {
+            $('#player_two_20_img').attr('src', "<%= image_path 'one.png', class: 'image' %>");
+        } else if (val == 2) {
+            $('#player_two_20_img').attr('src', "<%= image_path 'two.png', class: 'image' %>");
+        } else if (val == 3) {
+            $('#player_two_20_img').attr('src', "<%= image_path 'three.png', class: 'image' %>");
+        }
+    });
+
+    $('#player_two_be').on('click', function() {
+        var val = (parseInt($('#player_two_be').val(), 10) + 1).toString();
+        $('#player_two_be').attr('value', val);
+        var lav = parseInt($('#player_one_be').val(), 10);
+        val = parseInt(val)
+        if (val > 3 && lav < 3) {
+            console.log('penis');
+            var score = (parseInt($('#player_two_score').text(), 10) + 25).toString();
+            $('#player_two_score').text(function(i, oldtext) {
+                return score;
+            });
+        }
+        if (val == 1) {
+            $('#player_two_be_img').attr('src', "<%= image_path 'one.png', class: 'image' %>");
+        } else if (val == 2) {
+            $('#player_two_be_img').attr('src', "<%= image_path 'two.png', class: 'image' %>");
+        } else if (val == 3) {
+            $('#player_two_be_img').attr('src', "<%= image_path 'three.png', class: 'image' %>");
+        }
+    });
+});
