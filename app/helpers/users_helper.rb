@@ -4,11 +4,27 @@ module UsersHelper
     url = "http://gravatar.com/avatar/#{gravatar}.png?s=#{size}"
   end
 
-  def games_played
-    user = User.find(params[:id])
+  def games_played(id = nil)
+    user = id.nil? ? User.find(params[:id]) : User.find(id)
     games_one = Game.where(player_one: user.id)
     games_two = Game.where(player_two: user.id)
     @games_played = games_one + games_two
+  end
+
+  def hit_percentage
+    user = User.find(params[:id])
+    games_one = Game.where(player_one: user.id)
+    games_two = Game.where(player_two: user.id)
+
+    player_15 = games_one.pluck(:player_one_15).compact.sum + games_two.pluck(:player_two_15).compact.sum
+    player_16 = games_one.pluck(:player_one_16).compact.sum + games_two.pluck(:player_two_16).compact.sum
+    player_17 = games_one.pluck(:player_one_17).compact.sum + games_two.pluck(:player_two_17).compact.sum
+    player_18 = games_one.pluck(:player_one_18).compact.sum + games_two.pluck(:player_two_18).compact.sum
+    player_19 = games_one.pluck(:player_one_19).compact.sum + games_two.pluck(:player_two_19).compact.sum
+    player_20 = games_one.pluck(:player_one_20).compact.sum + games_two.pluck(:player_two_20).compact.sum
+    player_be = games_one.pluck(:player_one_be).compact.sum + games_two.pluck(:player_two_be).compact.sum
+
+    percents = { 15=> player_15, 16=> player_16, 17=> player_17, 18=> player_18, 19=> player_19, 20=> player_20, be: player_be }
   end
 
   def winner(game)
