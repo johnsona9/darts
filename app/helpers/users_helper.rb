@@ -12,7 +12,7 @@ module UsersHelper
   end
 
   def games_won
-    user = User.find(param[:id])
+    user = User.find(params[:id])
     games_one = Game.where(player_one: user.id)
     games_two = Game.where(player_two: user.id)
     games = games_one.pluck(:player_one_score, :player_two_score)
@@ -24,10 +24,31 @@ module UsersHelper
       one.to_i < two.to_i
     end
     wins = wins_one.concat(wins_two)
+    win_hash = { wins: 0 }
+    wins.each do |game|
+      win_hash[:wins] += 1 if game
+    end
+    return win_hash
   end
 
   def games_lost
-
+    user = User.find(params[:id])
+    games_one = Game.where(player_one: user.id)
+    games_two = Game.where(player_two: user.id)
+    games = games_one.pluck(:player_one_score, :player_two_score)
+    losses_one = games.map do |one, two|
+      one.to_i < two.to_i
+    end
+    games = games_two.pluck(:player_one_score, :player_two_score)
+    losses_two = games.map do |one, two|
+      one.to_i > two.to_i
+    end
+    losses = losses_one.concat(losses_two)
+    losses_hash = { losses: 0 }
+    losses.each do |game|
+      losses_hash[:losses] += 1 if game
+    end
+    return losses_hash
   end
 
   def hit_percentage

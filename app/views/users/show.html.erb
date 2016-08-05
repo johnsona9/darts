@@ -15,10 +15,11 @@
     </div>
     <div class="col-sm-6">
       <br>
-      <%= pie_chart hit_percentage , id: "users-chart" %>
+      <%= pie_chart hit_percentage, id: 'users-chart' %>
       <p>
         Percent hits based on number
       </p>
+      <%= pie_chart games_won.merge(games_lost), id: 'win-loss-chart' %>
     </div>
   </div>
 </div>
