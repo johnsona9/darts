@@ -11,6 +11,25 @@ module UsersHelper
     @games_played = games_one + games_two
   end
 
+  def games_won
+    user = User.find(param[:id])
+    games_one = Game.where(player_one: user.id)
+    games_two = Game.where(player_two: user.id)
+    games = games_one.pluck(:player_one_score, :player_two_score)
+    wins_one = games.map do |one, two|
+      one.to_i > two.to_i
+    end
+    games = games_two.pluck(:player_one_score, :player_two_score)
+    wins_two = games.map do |one, two|
+      one.to_i < two.to_i
+    end
+    wins = wins_one.concat(wins_two)
+  end
+
+  def games_lost
+
+  end
+
   def hit_percentage
     user = User.find(params[:id])
     games_one = Game.where(player_one: user.id)
