@@ -1,0 +1,31 @@
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<ul class="users">
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>Wins</th>
+        <th>Losses</th>
+      </tr>
+    </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td>
+              <%= gravatar_for user, size: 50 %>
+              <%= link_to user.name, user %>
+            </td>
+            <td>
+              <%= games_won(user.id)[:wins] %>
+            </td>
+            <td>
+              <%= games_lost(user.id)[:losses] %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+  </table>
+</ul>

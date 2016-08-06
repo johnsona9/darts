@@ -4,6 +4,13 @@ module UsersHelper
     url = "http://gravatar.com/avatar/#{gravatar}.png?s=#{size}"
   end
 
+  def gravatar_for(user, options = { size: 80 })
+    gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
+    size = options[:size]
+    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
+    image_tag(gravatar_url, alt: user.name, class: "gravatar")
+  end
+
   def games_played(id = nil)
     user = id.nil? ? User.find(params[:id]) : User.find(id)
     games_one = Game.where(player_one: user.id)
@@ -11,8 +18,8 @@ module UsersHelper
     @games_played = games_one + games_two
   end
 
-  def games_won
-    user = User.find(params[:id])
+  def games_won(player_id = nil)
+    user = player_id.nil? ? User.find(params[:id]) : User.find(player_id)
     games_one = Game.where(player_one: user.id)
     games_two = Game.where(player_two: user.id)
     games = games_one.pluck(:player_one_score, :player_two_score)
@@ -31,8 +38,8 @@ module UsersHelper
     return win_hash
   end
 
-  def games_lost
-    user = User.find(params[:id])
+  def games_lost(player_id)
+    user = player_id.nil? ? User.find(params[:id]) : User.find(player_id)
     games_one = Game.where(player_one: user.id)
     games_two = Game.where(player_two: user.id)
     games = games_one.pluck(:player_one_score, :player_two_score)
