@@ -38,7 +38,7 @@ module UsersHelper
     return win_hash
   end
 
-  def games_lost(player_id)
+  def games_lost(player_id = nil)
     user = player_id.nil? ? User.find(params[:id]) : User.find(player_id)
     games_one = Game.where(player_one: user.id)
     games_two = Game.where(player_two: user.id)
