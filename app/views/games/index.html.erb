@@ -1,0 +1,21 @@
+<% provide(:title, 'All games') %>
+<%= will_paginate %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Player One</th>
+        <th>Score</th>
+        <th>Player Two</th>
+      </tr>
+    </thead>
+      <tbody>
+        <% @games.each do |game| %>
+          <tr>
+            <td><%= User.find(game[:player_one]).name %></td>
+            <td><%= link_to "#{game[:player_one_score] || 0} - #{game[:player_two_score] || 0}", game, method: :get %></td>
+            <td><%= User.find(game[:player_two]).name %></td>
+          </tr>
+        <% end %>
+      </tbody>
+  </table>
+<%= will_paginate %>

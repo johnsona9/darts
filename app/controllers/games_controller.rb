@@ -18,6 +18,10 @@ class GamesController < ApplicationController
     end
   end
 
+  def index
+    @games = Game.paginate(page: params[:page])
+  end
+
   def show
     @game = Game.find(params[:id])
     @player_one_name = User.find(@game.player_one).name
