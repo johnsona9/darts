@@ -3,10 +3,12 @@
 // You can use CoffeeScript in this file: http://coffeescript.org
 $(document).ready(function() {
     $('#player_one_15').on('click', function() {
-        var val = (parseInt($('#player_one_15').val(), 10) + 1).toString();
-        $('#player_one_15').attr('value', val);
+        var val = (parseInt($('#player_one_15').val(), 10));
         var lav = parseInt($('#player_two_15').val(), 10);
-        val = parseInt(val)
+        if (lav < 3 || val < 3) {
+            $('#player_one_15').attr('value', (val + 1).toString());
+            val += 1;
+        }
         if (val > 3 && lav < 3) {
             console.log('penis');
             var score = (parseInt($('#player_one_score').text(), 10) + 15).toString();
@@ -24,10 +26,12 @@ $(document).ready(function() {
     });
 
     $('#player_one_16').on('click', function() {
-        var val = (parseInt($('#player_one_16').val(), 10) + 1).toString();
-        $('#player_one_16').attr('value', val);
+        var val = (parseInt($('#player_one_16').val(), 10));
         var lav = parseInt($('#player_two_16').val(), 10);
-        val = parseInt(val)
+        if (lav < 3 || val < 3) {
+            $('#player_one_16').attr('value', (val + 1).toString());
+            val += 1;
+        }
         if (val > 3 && lav < 3) {
             console.log('penis');
             var score = (parseInt($('#player_one_score').text(), 10) + 16).toString();
@@ -45,10 +49,12 @@ $(document).ready(function() {
     });
 
     $('#player_one_17').on('click', function() {
-        var val = (parseInt($('#player_one_17').val(), 10) + 1).toString();
-        $('#player_one_17').attr('value', val);
+        var val = (parseInt($('#player_one_17').val(), 10));
         var lav = parseInt($('#player_two_17').val(), 10);
-        val = parseInt(val)
+        if (lav < 3 || val < 3) {
+            $('#player_one_17').attr('value', (val + 1).toString());
+            val += 1;
+        }
         if (val > 3 && lav < 3) {
             console.log('penis');
             var score = (parseInt($('#player_one_score').text(), 10) + 17).toString();
@@ -66,10 +72,12 @@ $(document).ready(function() {
     });
 
     $('#player_one_18').on('click', function() {
-        var val = (parseInt($('#player_one_18').val(), 10) + 1).toString();
-        $('#player_one_18').attr('value', val);
+        var val = (parseInt($('#player_one_18').val(), 10));
         var lav = parseInt($('#player_two_18').val(), 10);
-        val = parseInt(val)
+        if (lav < 3 || val < 3) {
+            $('#player_one_18').attr('value', (val + 1).toString());
+            val += 1;
+        }
         if (val > 3 && lav < 3) {
             console.log('penis');
             var score = (parseInt($('#player_one_score').text(), 10) + 18).toString();
@@ -87,10 +95,12 @@ $(document).ready(function() {
     });
 
     $('#player_one_19').on('click', function() {
-        var val = (parseInt($('#player_one_19').val(), 10) + 1).toString();
-        $('#player_one_19').attr('value', val);
+        var val = (parseInt($('#player_one_19').val(), 10));
         var lav = parseInt($('#player_two_19').val(), 10);
-        val = parseInt(val)
+        if (lav < 3 || val < 3) {
+            $('#player_one_19').attr('value', (val + 1).toString());
+            val += 1;
+        }
         if (val > 3 && lav < 3) {
             console.log('penis');
             var score = (parseInt($('#player_one_score').text(), 10) + 19).toString();
@@ -108,10 +118,12 @@ $(document).ready(function() {
     });
 
     $('#player_one_20').on('click', function() {
-        var val = (parseInt($('#player_one_20').val(), 10) + 1).toString();
-        $('#player_one_20').attr('value', val);
+        var val = (parseInt($('#player_one_20').val(), 10));
         var lav = parseInt($('#player_two_20').val(), 10);
-        val = parseInt(val)
+        if (lav < 3 || val < 3) {
+            $('#player_one_20').attr('value', (val + 1).toString());
+            val += 1;
+        }
         if (val > 3 && lav < 3) {
             console.log('penis');
             var score = (parseInt($('#player_one_score').text(), 10) + 20).toString();
@@ -129,10 +141,12 @@ $(document).ready(function() {
     });
 
     $('#player_one_be').on('click', function() {
-        var val = (parseInt($('#player_one_be').val(), 10) + 1).toString();
-        $('#player_one_be').attr('value', val);
+        var val = (parseInt($('#player_one_be').val(), 10));
         var lav = parseInt($('#player_two_be').val(), 10);
-        val = parseInt(val)
+        if (lav < 3 || val < 3) {
+            $('#player_one_be').attr('value', (val + 1).toString());
+            val += 1;
+        }
         if (val > 3 && lav < 3) {
             console.log('penis');
             var score = (parseInt($('#player_one_score').text(), 10) + 25).toString();
@@ -150,10 +164,12 @@ $(document).ready(function() {
     });
 
     $('#player_two_15').on('click', function() {
-        var val = (parseInt($('#player_two_15').val(), 10) + 1).toString();
-        $('#player_two_15').attr('value', val);
+        var val = (parseInt($('#player_two_15').val(), 10));
         var lav = parseInt($('#player_one_15').val(), 10);
-        val = parseInt(val)
+        if (lav < 3 || val < 3) {
+            $('#player_two_15').attr('value', (val + 1).toString());
+            val += 1;
+        }
         if (val > 3 && lav < 3) {
             console.log('penis');
             var score = (parseInt($('#player_two_score').text(), 10) + 15).toString();
@@ -171,10 +187,12 @@ $(document).ready(function() {
     });
 
     $('#player_two_16').on('click', function() {
-        var val = (parseInt($('#player_two_16').val(), 10) + 1).toString();
-        $('#player_two_16').attr('value', val);
+        var val = (parseInt($('#player_two_16').val(), 10));
         var lav = parseInt($('#player_one_16').val(), 10);
-        val = parseInt(val)
+        if (lav < 3 || val < 3) {
+            $('#player_two_16').attr('value', (val + 1).toString());
+            val += 1;
+        }
         if (val > 3 && lav < 3) {
             console.log('penis');
             var score = (parseInt($('#player_two_score').text(), 10) + 16).toString();
@@ -192,10 +210,12 @@ $(document).ready(function() {
     });
 
     $('#player_two_17').on('click', function() {
-        var val = (parseInt($('#player_two_17').val(), 10) + 1).toString();
-        $('#player_two_17').attr('value', val);
+        var val = (parseInt($('#player_two_17').val(), 10));
         var lav = parseInt($('#player_one_17').val(), 10);
-        val = parseInt(val)
+        if (lav < 3 || val < 3) {
+            $('#player_two_17').attr('value', (val + 1).toString());
+            val += 1;
+        }
         if (val > 3 && lav < 3) {
             console.log('penis');
             var score = (parseInt($('#player_two_score').text(), 10) + 17).toString();
@@ -213,10 +233,12 @@ $(document).ready(function() {
     });
 
     $('#player_two_18').on('click', function() {
-        var val = (parseInt($('#player_two_18').val(), 10) + 1).toString();
-        $('#player_two_18').attr('value', val);
+        var val = (parseInt($('#player_two_18').val(), 10));
         var lav = parseInt($('#player_one_18').val(), 10);
-        val = parseInt(val)
+        if (lav < 3 || val < 3) {
+            $('#player_two_18').attr('value', (val + 1).toString());
+            val += 1;
+        }
         if (val > 3 && lav < 3) {
             console.log('penis');
             var score = (parseInt($('#player_two_score').text(), 10) + 18).toString();
@@ -234,10 +256,12 @@ $(document).ready(function() {
     });
 
     $('#player_two_19').on('click', function() {
-        var val = (parseInt($('#player_two_19').val(), 10) + 1).toString();
-        $('#player_two_19').attr('value', val);
+        var val = (parseInt($('#player_two_19').val(), 10));
         var lav = parseInt($('#player_one_19').val(), 10);
-        val = parseInt(val)
+        if (lav < 3 || val < 3) {
+            $('#player_two_19').attr('value', (val + 1).toString());
+            val += 1;
+        }
         if (val > 3 && lav < 3) {
             console.log('penis');
             var score = (parseInt($('#player_two_score').text(), 10) + 19).toString();
@@ -255,10 +279,12 @@ $(document).ready(function() {
     });
 
     $('#player_two_20').on('click', function() {
-        var val = (parseInt($('#player_two_20').val(), 10) + 1).toString();
-        $('#player_two_20').attr('value', val);
+        var val = (parseInt($('#player_two_20').val(), 10));
         var lav = parseInt($('#player_one_20').val(), 10);
-        val = parseInt(val)
+        if (lav < 3 || val < 3) {
+            $('#player_two_20').attr('value', (val + 1).toString());
+            val += 1;
+        }
         if (val > 3 && lav < 3) {
             console.log('penis');
             var score = (parseInt($('#player_two_score').text(), 10) + 20).toString();
@@ -276,10 +302,12 @@ $(document).ready(function() {
     });
 
     $('#player_two_be').on('click', function() {
-        var val = (parseInt($('#player_two_be').val(), 10) + 1).toString();
-        $('#player_two_be').attr('value', val);
+        var val = (parseInt($('#player_two_be').val(), 10));
         var lav = parseInt($('#player_one_be').val(), 10);
-        val = parseInt(val)
+        if (lav < 3 || val < 3) {
+            $('#player_two_be').attr('value', (val + 1).toString());
+            val += 1;
+        }
         if (val > 3 && lav < 3) {
             console.log('penis');
             var score = (parseInt($('#player_two_score').text(), 10) + 25).toString();
