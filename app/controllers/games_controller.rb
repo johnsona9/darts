@@ -30,18 +30,20 @@ class GamesController < ApplicationController
 
   def update_player
     @game = Game.find(params[:id])
-    other_player = params[:player] == 'one' ? PLAYERS[1] : PLAYERS[0]
-    main_score = @game['player_' + params[:player] + '_' + params[:score]]
-    other_score = @game['player_' + other_player + '_' + params[:score]]
-    if main_score > 2 && other_score < 3
-      initial_score = @game[('player_' + params[:player] + '_score')]
-      @game[('player_' + params[:player] + '_score')] = initial_score + params[:score].to_i
+    if (current_user_one && current_user_one.id == @game.player_one) && (current_user_two && current_user_two.id == @game.player_two)
+      other_player = params[:player] == 'one' ? PLAYERS[1] : PLAYERS[0]
+      main_score = @game['player_' + params[:player] + '_' + params[:score]]
+      other_score = @game['player_' + other_player + '_' + params[:score]]
+      if main_score > 2 && other_score < 3
+        initial_score = @game[('player_' + params[:player] + '_score')]
+        @game[('player_' + params[:player] + '_score')] = initial_score + params[:score].to_i
+      end
+      if main_score < 3 || other_score < 3
+        initial_score = @game[('player_' + params[:player] + '_' + params[:score])]
+        @game[('player_' + params[:player] + '_' + params[:score])] = initial_score + 1
+      end
+      @game.save
     end
-    if main_score < 3 || other_score < 3
-      initial_score = @game[('player_' + params[:player] + '_' + params[:score])]
-      @game[('player_' + params[:player] + '_' + params[:score])] = initial_score + 1
-    end
-    @game.save
   end
 
     def game_params
