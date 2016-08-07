@@ -21,9 +21,9 @@
           <tbody>
             <% @games.each do |game| %>
               <tr>
-                <td><%= User.find(game[:player_one]).name %></td>
+                <td><%= link_to User.find(game[:player_one]).name, User.find(game[:player_one]) %></td>
                 <td><%= link_to "#{game[:player_one_score] || 0} - #{game[:player_two_score] || 0}", game, method: :get %></td>
-                <td><%= User.find(game[:player_two]).name %></td>
+                <td><%= link_to User.find(game[:player_two]).name, User.find(game[:player_two]) %></td>
               </tr>
             <% end %>
           </tbody>
