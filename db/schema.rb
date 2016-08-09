@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160731174405) do
+ActiveRecord::Schema.define(version: 20160809001213) do
 
-  create_table "games", force: :cascade do |t|
+  create_table "cricket_games", force: :cascade do |t|
     t.integer  "player_one"
     t.integer  "player_two"
     t.integer  "player_one_15",    default: 0

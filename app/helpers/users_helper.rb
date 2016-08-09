@@ -13,15 +13,15 @@ module UsersHelper
 
   def games_played(id = nil)
     user = id.nil? ? User.find(params[:id]) : User.find(id)
-    games_one = Game.where(player_one: user.id)
-    games_two = Game.where(player_two: user.id)
+    games_one = CricketGame.where(player_one: user.id)
+    games_two = CricketGame.where(player_two: user.id)
     @games_played = games_one + games_two
   end
 
   def games_won(player_id = nil)
     user = player_id.nil? ? User.find(params[:id]) : User.find(player_id)
-    games_one = Game.where(player_one: user.id)
-    games_two = Game.where(player_two: user.id)
+    games_one = CricketGame.where(player_one: user.id)
+    games_two = CricketGame.where(player_two: user.id)
     games = games_one.pluck(:player_one_score, :player_two_score)
     wins_one = games.map do |one, two|
       one.to_i > two.to_i
@@ -40,8 +40,8 @@ module UsersHelper
 
   def games_lost(player_id = nil)
     user = player_id.nil? ? User.find(params[:id]) : User.find(player_id)
-    games_one = Game.where(player_one: user.id)
-    games_two = Game.where(player_two: user.id)
+    games_one = CricketGame.where(player_one: user.id)
+    games_two = CricketGame.where(player_two: user.id)
     games = games_one.pluck(:player_one_score, :player_two_score)
     losses_one = games.map do |one, two|
       one.to_i < two.to_i
@@ -60,8 +60,8 @@ module UsersHelper
 
   def hit_percentage
     user = User.find(params[:id])
-    games_one = Game.where(player_one: user.id)
-    games_two = Game.where(player_two: user.id)
+    games_one = CricketGame.where(player_one: user.id)
+    games_two = CricketGame.where(player_two: user.id)
 
     player_15 = games_one.pluck(:player_one_15).compact.sum + games_two.pluck(:player_two_15).compact.sum
     player_16 = games_one.pluck(:player_one_16).compact.sum + games_two.pluck(:player_two_16).compact.sum

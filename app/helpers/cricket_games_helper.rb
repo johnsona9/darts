@@ -1,4 +1,4 @@
-module GamesHelper
+module CricketGamesHelper
   def is_editable?
     return (!current_user_one.nil? && current_user_one.id == @game.player_one) && (!current_user_two.nil? && current_user_two.id == @game.player_two) && !game_over? ? 1 : 0
   end

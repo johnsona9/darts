@@ -1,8 +1,8 @@
-class GamesController < ApplicationController
+class CricketGamesController < ApplicationController
   PLAYERS = ['one', 'two']
 
   def new
-    @game = Game.new
+    @game = CricketGame.new
     if authenticated_one? && authenticated_two?
       @game['player_one'] = @current_user_one.id
       @game['player_two'] = @current_user_two.id
@@ -19,17 +19,17 @@ class GamesController < ApplicationController
   end
 
   def index
-    @games = Game.paginate(page: params[:page])
+    @games = CricketGame.paginate(page: params[:page])
   end
 
   def show
-    @game = Game.find(params[:id])
+    @game = CricketGame.find(params[:id])
     @player_one_name = User.find(@game.player_one).name
     @player_two_name = User.find(@game.player_two).name
   end
 
   def update_player
-    @game = Game.find(params[:id])
+    @game = CricketGame.find(params[:id])
     if (current_user_one && current_user_one.id == @game.player_one) && (current_user_two && current_user_two.id == @game.player_two)
       other_player = params[:player] == 'one' ? PLAYERS[1] : PLAYERS[0]
       main_score = @game['player_' + params[:player] + '_' + params[:score]]
