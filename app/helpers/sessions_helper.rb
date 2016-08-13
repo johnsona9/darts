@@ -6,29 +6,26 @@ module SessionsHelper
     currently_logged += session[:user_id_two] unless session[:user_id_two].nil?
     currently_logged += session[:user_id_three] unless session[:user_id_three].nil?
     currently_logged += session[:user_id_four] unless session[:user_id_four].nil?
+    return currently_logged
   end
 
   def unused_sessions
     unused_logs = []
-    unused_logs += 'user_id_one' if session[:user_id_one].nil?
-    unused_logs += 'user_id_two' if session[:user_id_two].nil?
-    unused_logs += 'user_id_three' if session[:user_id_three].nil?
-    unused_logs += 'user_id_four' if session[:user_id_four].nil?
+    unused_logs += [1] if session[:user_id_one].nil?
+    unused_logs += [2] if session[:user_id_two].nil?
+    unused_logs += [3] if session[:user_id_three].nil?
+    unused_logs += [4] if session[:user_id_four].nil?
   end
 
   def log_in(session_id, user)
     if session_id == 1
       session[:user_id_one] = user.id
-      redirect_to user
     elsif session_id == 2
       session[:user_id_two] = user.id
-      redirect_to user
     elsif session_id == 3
       session[:user_id_three] = user.id
-      redirect_to user
     elsif session_id == 4
       session[:user_id_four] = user.id
-      redirect_to user
     end
   end
 

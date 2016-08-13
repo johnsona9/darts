@@ -56,6 +56,7 @@ class SessionsController < ApplicationController
             redirect_to root_url
           else
             log_in(unused_sessions[0], user) unless unused_sessions.empty?
+            redirect_to root_url
           end
         else
           flash[:warning] = 'Your account is not activated, please check your email and try again.'
