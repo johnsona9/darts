@@ -22,6 +22,14 @@ Rails.application.routes.draw do
   post 'log_in_two', to: 'sessions#create_two'
   delete '/log_out_two', to: 'sessions#destroy_two'
 
+  get '/log_in_three', to: 'sessions#new_three'
+  post 'log_in_three', to: 'sessions#create_three'
+  delete '/log_out_three', to: 'sessions#destroy_three'
+
+  get '/log_in_four', to: 'sessions#new_four'
+  post 'log_in_four', to: 'sessions#create_four'
+  delete '/log_out_four', to: 'sessions#destroy_four'
+
   post 'cricket_games/update_player'
 
 end
