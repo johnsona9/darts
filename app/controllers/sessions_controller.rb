@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
+    session[:login_id] = params[:id]
   end
 
   def create
@@ -11,8 +12,14 @@ class SessionsController < ApplicationController
           flash[:danger] = 'You can not sign in more than once'
           redirect_to root_url
         else
-          log_in(unused_sessions[0], user) unless unused_sessions.empty?
-          redirect_to root_url
+          if session[:login_id].nil?
+            log_in(unused_sessions[0], user) unless unused_sessions.empty?
+            redirect_to root_url
+          else
+            log_in(session[:login_id].to_i, user)
+            session.delete(:login_id)
+            redirect_to root_url
+          end
         end
       else
         flash[:warning] = 'Your account is not activated, please check your email and try again.'
