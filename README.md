@@ -1,26 +1,7 @@
-# README
+# Darts
 
 ## The purpose for this project is to build a RoR app that helps you keep score while playing darts.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a basic RoR app that allows users to play darts. Currently only two player cricket is supported but more games are being added with up to four players.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The intention is to have this app run on a raspberry-pi and act as a scoreboard with a touchscreen monitor.
