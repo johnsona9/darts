@@ -2,10 +2,10 @@ module SessionsHelper
 
   def logged_in_users
     currently_logged = []
-    currently_logged += session[:user_id_one] unless session[:user_id_one].nil?
-    currently_logged += session[:user_id_two] unless session[:user_id_two].nil?
-    currently_logged += session[:user_id_three] unless session[:user_id_three].nil?
-    currently_logged += session[:user_id_four] unless session[:user_id_four].nil?
+    currently_logged += [session[:user_id_one]] unless session[:user_id_one].nil?
+    currently_logged += [session[:user_id_two]] unless session[:user_id_two].nil?
+    currently_logged += [session[:user_id_three]] unless session[:user_id_three].nil?
+    currently_logged += [session[:user_id_four]] unless session[:user_id_four].nil?
     return currently_logged
   end
 

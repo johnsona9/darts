@@ -12,12 +12,12 @@
               <li><%= link_to "Account", @current_user_one %></li>
               <li class="divider"></li>
               <li>
-                <li><%= link_to 'Log Out', log_out_one_path, method: 'delete' %></li>
+                <li><%= link_to 'Log Out', log_out_path(id: 1), method: 'delete' %></li>
               </li>
             </ul>
           </li>
         <% else %>
-          <li><%= link_to 'P1 Log In', log_in_one_path %></li>
+          <li><%= link_to 'P1 Log In', log_in_path %></li>
         <% end %>
 
         <% if logged_in_two? %>
@@ -29,12 +29,12 @@
               <li><%= link_to "Account", @current_user_two %></li>
               <li class="divider"></li>
               <li>
-                <%= link_to 'P2 Log Out', log_out_two_path, method: 'delete' %>
+                <%= link_to 'P2 Log Out', log_out_path(id: 2), method: 'delete' %>
               </li>
             </ul>
           </li>
         <% else %>
-          <li><%= link_to 'P2 Log In', log_in_two_path %></li>
+          <li><%= link_to 'P2 Log In', log_in_path %></li>
         <% end %>
       </ul>
 
@@ -48,12 +48,12 @@
               <li><%= link_to "Account", @current_user_three %></li>
               <li class="divider"></li>
               <li>
-                <%= link_to 'P3 Log Out', log_out_three_path, method: 'delete' %>
+                <%= link_to 'P3 Log Out', log_out_path(id: 3), method: 'delete', session_num: 3 %>
               </li>
             </ul>
           </li>
         <% else %>
-          <li><%= link_to 'P3 Log In', log_in_three_path %></li>
+          <li><%= link_to 'P3 Log In', log_in_path %></li>
         <% end %>
 
         <% if logged_in_four? %>
@@ -65,12 +65,12 @@
               <li><%= link_to "Account", @current_user_four %></li>
               <li class="divider"></li>
               <li>
-                <%= link_to 'P4 Log Out', log_out_four_path, method: 'delete' %>
+                <%= link_to 'P4 Log Out', log_out_path(id: 4), method: 'delete' %>
               </li>
             </ul>
           </li>
         <% else %>
-          <li><%= link_to 'P4 Log In', log_in_four_path %></li>
+          <li><%= link_to 'P4 Log In', log_in_path %></li>
         <% end %>
       </ul>
     </nav>
