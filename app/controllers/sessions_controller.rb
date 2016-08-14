@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   def new
     session[:login_id] = params[:id]
   end
@@ -10,25 +9,21 @@ class SessionsController < ApplicationController
       if user.activated?
         if logged_in_users.include? user.id
           flash[:danger] = 'You can not sign in more than once'
-          redirect_to root_url
         else
           if session[:login_id].nil?
             log_in(unused_sessions[0], user) unless unused_sessions.empty?
-            redirect_to root_url
           else
             log_in(session[:login_id].to_i, user)
             session.delete(:login_id)
-            redirect_to root_url
           end
         end
       else
         flash[:warning] = 'Your account is not activated, please check your email and try again.'
-        redirect_to root_url
       end
     else
       flash[:danger] = 'Invalid email/password combination'
-      redirect_to root_url
     end
+    redirect_to root_url
   end
 
   def destroy
