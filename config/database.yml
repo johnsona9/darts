@@ -1,26 +1,26 @@
-development:
+development: &default
   adapter: postgresql
   encoding: utf8
-  database: project_development
+  database: darts_development
+  host: db
   pool: 5
-  username:
+  username: postgres
   password:
 
 test: &TEST
   adapter: postgresql
   encoding: utf8
-  database: project_test
+  database: darts_test
+  host: db
   pool: 5
-  username:
+  username: postgres
   password:
 
 production:
   adapter: postgresql
   encoding: utf8
-  database: project_production
+  database: darts_production
+  host: db
   pool: 5
   username: <%= ENV['POSTGRES_USERNAME'] %>
   password: <%= ENV['POSTGRES_PASSWORD'] %>
-
-cucumber:
-  <<: *TEST
