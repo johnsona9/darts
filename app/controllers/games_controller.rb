@@ -37,6 +37,7 @@ class GamesController < ApplicationController
       if main_score > 2 && other_score < 3
         initial_score = @game[('player_' + params[:player] + '_score')]
         @game[('player_' + params[:player] + '_score')] = initial_score + params[:score].to_i
+        @game[('player_' + params[:player] + '_score')] = initial_score + 25 if params[:score] == 'be'
       end
       if main_score < 3 || other_score < 3
         initial_score = @game[('player_' + params[:player] + '_' + params[:score])]
